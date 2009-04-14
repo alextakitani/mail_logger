@@ -1,27 +1,4 @@
-module ActionMailer
-  class Base
-    def deliver!(mail = @mail)
-      raise "No mail object available for delivery!" unless mail
-      logger.info "MailLogger sent mail:\n #{mail.encoded}" unless logger.nil?
-      log_to_db("#{mail.encoded}")
-      
-      begin
-        send("perform_delivery_#{delivery_method}", mail) if perform_deliveries
-      rescue Object => e
-        raise e if raise_delivery_errors
-      end
-      mail
-    end
+require "mail_logger/app/models/mail_log"
+require "mail_logger/lib/extensions/action_mailer"
 
-    private
-
-    def log_to_db(mail)
-      begin
-        MailLog.create({:form_name => subject, :message => mail})
-        logger.info "MailLogger logged okay" unless logger.nil?
-      rescue
-        logger.info "MailLogger failed"
-      end
-    end
-  end
-end
+ActionMailer::Base.send :include, MailLogger::Lib::Extensions::ActionMailer

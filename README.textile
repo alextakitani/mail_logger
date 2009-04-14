@@ -1,0 +1,26 @@
+h1. Mail Logger
+
+Braindead-simple email logger for ActionMailer using ActiveRecord
+
+h2. Gem Installation for Rails 2.1+
+
+In config/environment.rb:
+
+    config.gem "fusionary-mail_logger",
+      :lib     => "mail_logger",
+      :source  => "http://gems.github.com"
+
+h2. Generator
+
+Ensure the environment's database is present and then run
+
+    script/generate mail_logger
+
+This will generate the migration and generate the MailLog AR model.
+
+h2. About
+
+The purpose of this is to provide a simple audit trail, specific to ActionMailer, for Rails apps.  Without much work, you could write a 
+controller and some views and then monitor the emails sent out; that's really beyond the scope of this project though.
+
+Copyright (c) 2009 Fusionary Media, released under the MIT license

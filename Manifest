@@ -1,0 +1,12 @@
+generators/mail_logger/lib/rake_commands.rb
+generators/mail_logger/mail_logger_generator.rb
+generators/mail_logger/templates/app/models/mail_log.rb
+generators/mail_logger/templates/db/migrate/create_mail_logs.rb
+generators/mail_logger/USAGE
+lib/mail_logger/app/models/mail_log.rb
+lib/mail_logger/lib/extensions/action_mailer.rb
+lib/mail_logger.rb
+rails/init.rb
+Rakefile
+README
+Manifest
