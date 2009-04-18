@@ -9,10 +9,10 @@ module MailLogger
               mail = args.first || @mail # depend on ActionMailer::Base's @mail ivar is pretty nasty but has to be done
               if !mail.nil?
                 begin
-                  logger.info "MailLogger logged #{mail.encoded}" if logger && !logger.nil?
+                  logger.info "MailLogger logged #{mail.encoded}" if logger
                   MailLog.create_from_mail(mail)
                 rescue
-                  logger.info "MailLogger failed" if logger && !logger.nil?
+                  logger.info "MailLogger failed" if logger
                 end
               end
               
