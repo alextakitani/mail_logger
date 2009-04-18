@@ -16,11 +16,16 @@ Ensure the environment's database is present and then run
 
     script/generate mail_logger
 
-This will generate the migration and generate the MailLog AR model.
+This will generate the migration and generate the MailLog ActiveRecord model.
+
+The model includes a module that attaches all the necessary code, allowing you to add other code (named scopes, etc) without interference
+
+h2. Ultra-Transparent
+
+You could install this gem and not notice *anything* different with your application.  It sits in the background, dumping all emails that get sent to your database.  The to, from, and subject line, as well as created_at, are all indexed for your querying pleasure.  Set up named scopes to search fields, or aggregate all common subjects and allow administrator accounts to filter/view them.  Whatever the case, the data is yours; whipping together the controller and setting permissions is the easy part.
 
 h2. About
 
-The purpose of this is to provide a simple audit trail, specific to ActionMailer, for Rails apps.  Without much work, you could write a 
-controller and some views and then monitor the emails sent out; that's really beyond the scope of this project though.
+The purpose of this is to provide a simple audit trail, specific to ActionMailer, for Rails apps.  Without much work, you could write a controller and some views and then monitor the emails sent out; that's really beyond the scope of this project though.
 
 Copyright (c) 2009 Fusionary Media, released under the MIT license

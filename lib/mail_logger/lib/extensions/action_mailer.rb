@@ -5,13 +5,14 @@ module MailLogger
         def self.included(base)
           base.class_eval do
             def deliver_with_hooks!(*args)
+              logger ||= nil
               mail = args.first || @mail # depend on ActionMailer::Base's @mail ivar is pretty nasty but has to be done
               if !mail.nil?
                 begin
-                  logger.info "MailLogger logged #{mail.encoded}" unless logger.nil?
+                  logger.info "MailLogger logged #{mail.encoded}" if logger && !logger.nil?
                   MailLog.create_from_mail(mail)
                 rescue
-                  logger.info "MailLogger failed" unless logger.nil?
+                  logger.info "MailLogger failed" if logger && !logger.nil?
                 end
               end
               

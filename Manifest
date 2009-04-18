@@ -6,8 +6,12 @@ generators/mail_logger/USAGE
 lib/mail_logger/app/models/mail_log.rb
 lib/mail_logger/lib/extensions/action_mailer.rb
 lib/mail_logger.rb
+mail_logger.gemspec
 Manifest
 MIT-LICENSE
 rails/init.rb
 Rakefile
 README.textile
+test/test_helper.rb
+test/unit/action_mailer_extension_test.rb
+test/unit/mail_log_test.rb
