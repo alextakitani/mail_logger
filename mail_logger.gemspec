@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mail_logger}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Fusionary Media, Josh Clayton"]
-  s.date = %q{2009-04-23}
+  s.date = %q{2009-05-15}
   s.description = %q{Braindead-simple email logger for ActionMailer using ActiveRecord}
   s.email = %q{joshua.clayton@gmail.com}
   s.extra_rdoc_files = ["lib/mail_logger/app/models/mail_log.rb", "lib/mail_logger/lib/extensions/action_mailer.rb", "lib/mail_logger.rb", "README.textile"]
